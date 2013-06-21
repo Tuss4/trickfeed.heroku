@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>trick.FEED</title>
+<style>
+	body {
+		font-family: Arial, Verdana, Courier;
+		background-color: #CCC;
+	}
+	#headerbar {
+		left: 0;
+		right: 0;
+		top: 0;
+		background-color: #FFF;
+		position: fixed;
+		text-align: center;
+		box-shadow: 0px 10px 5px #999;
+	}
+	#firsthalf {
+		color: #CCC;
+	}
+	#lasthalf {
+		color: #0066CC;
+	}
+	#title {
+		margin-top: 20%;
+		font-weight: bold;
+	}
+	#content {
+		margin-top: 5%;
+	}
+	#content li {
+		display: inline-block;
+	}
+	#footer {
+		margin-top: 5%; 
+		color: #000;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<div id="headerbar"><h3><span id="title"><span id="firsthalf">trick.</span><span id="lasthalf">FEED</span></span></h3></div>
+	<div id ="content">
+	<ul>
+		{% for i in content %}
+			<li>{{ i | safe}}</li>
+		{% endfor %}
+	</ul>
+	</div>
+	<div id="footer">
+		<h4>&copy; 2013 Tuss4 Dzigns</h4>
+	</div>
+</body>
+</html>
