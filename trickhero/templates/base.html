@@ -9,10 +9,11 @@ function getThisId(datum){
 	var newUrl = "http://youtube.com/embed/"+datum+"?autoplay=1&allowFullScreen=true";
 	return newUrl;
 }
-//function changeThisId(datum){
-//	document.getElementById("ytplayer").setAttribute("src",getThisId(datum));
-//}
+function changeThisId(datum){
+	document.getElementById("ytplayer").setAttribute("src",getThisId(datum));
+}
 $(document).ready(function(){
+	alert("THE DOM IS READY");
 	$("#content li").click(function(){
 		$("#overlay").show();
 	})
