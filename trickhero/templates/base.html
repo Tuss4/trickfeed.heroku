@@ -3,6 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <title>trick.FEED</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+function getThisId(datum){
+	var newUrl = "http://youtube.com/embed/"+datum+"?autoplay=1&allowFullScreen=true";
+	return newUrl;
+}
+function changeThisId(datum){
+	document.getElementById("ytplayer").setAttribute("src",getThisId(datum));
+}
+$(document).ready(function(){
+	$("#content li").click(function(){
+		$("#overlay").show();
+	})
+	$("#close").click(function(){
+		$("#overlay").hide();
+		$("#ytplayer").attr("src","http://www.youtube.com/embed/");
+	})
+})
+</script>
 <style>
 	body {
 		font-family: Arial, Verdana, Courier;
@@ -38,6 +57,26 @@
 		color: #000;
 		text-align: center;
 	}
+	#overlay {
+		position: fixed;
+		z-index: 100;
+		display: none;
+		background-color: rgba(0,0,0,0.8);
+		color: #FFF;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		text-align: center;
+	}
+	iframe {
+		border: 0;
+		max-width: 100%;
+		max-height: 100%;
+	}
+	button {
+		border: 0;
+	}
 </style>
 </head>
 <body>
@@ -48,6 +87,12 @@
 			<li>{{ i | safe}}</li>
 		{% endfor %}
 	</ul>
+	</div>
+	<div id="overlay">
+		<h1>Tricking Theatre</h1>
+		<iframe id="ytplayer" width="720" height="480" src="http://www.youtube.com/embed/"></iframe>
+		<br />
+		<button id="close">Click to Close</button>
 	</div>
 	<div id="footer">
 		<h4>&copy; 2013 Tuss4 Dzigns</h4>
