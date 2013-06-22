@@ -13,7 +13,7 @@ def trick(request):
 			for thumbnail in entry.media.thumbnail:
 				t = []
 				t.append(thumbnail.url)
-			a.append("<a onclick=changeThisId('"+entry.media.player.url[32:43]+"')><img src="+t[0]+" alt="+entry.media.title.text+" title="+entry.media.title.text+" /></a>")
+			a.append("<a onclick=changeThisId('"+entry.media.player.url[32:43]+"')><img src="+t[0]+" alt='"+entry.media.title.text+"' title='"+entry.media.title.text+"' /></a>")
 	datafeed = "http://gdata.youtube.com/feeds/api/videos?q=tricking&orderby=published&category=tricking&max-results=30"
 	GetAndPrintVideoFeed(datafeed)
 	t = get_template('base.html')
