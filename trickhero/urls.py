@@ -6,6 +6,13 @@ admin.autodiscover()
 urlpatterns = patterns('',
 	url(r'^$', 'trickhero.views.trick'),
 	url(r'^home/$', 'trickhero.views.trick'),
+	url(r'^success/$', 'favo.views.success'),
+    url(r'^myfavs/$', 'favo.views.list_fav'),
+    url(r'^bye/$', 'trickhero.views.logout'),
+    url(r'^login/$', 'trickhero.views.login'),
+    url(r'^hello/$','trickhero.views.hi'),
+    url(r'^new/$','trickhero.views.new'),
+    url(r'^register/$','trickhero.views.register'),
     # Examples:
     # url(r'^$', 'trickhero.views.home', name='home'),
     # url(r'^trickhero/', include('trickhero.foo.urls')),
