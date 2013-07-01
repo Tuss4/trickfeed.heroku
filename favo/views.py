@@ -14,7 +14,7 @@ def success(request):
 		fs = Favorite.objects.filter(video=v)
 		fu = Favorite.objects.filter(user=request.user.username)
 		if fs and fu:
-			return HttpResponse(v + " is already in your favorites.<a href='/home/'>Go back</a>.")
+			return HttpResponseRedirect("/nodice/")
 		f.save()
 		return HttpResponseRedirect("/myfavs/")
 

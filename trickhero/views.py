@@ -47,6 +47,9 @@ def logout(request):
 def new(request):
 	form = New_user
 	return render(request, "register.html", {'form': form})
+	
+def nodice(request):
+	return render(request, "nodice.html")
 
 def register(request):
 	user = User.objects.create_user(username=request.POST.get('username'),

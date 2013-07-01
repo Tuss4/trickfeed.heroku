@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^hello/$','trickhero.views.hi'),
     url(r'^new/$','trickhero.views.new'),
     url(r'^register/$','trickhero.views.register'),
+    url(r'^nodice/$','trickhero.views.nodice'),
     # Examples:
     # url(r'^$', 'trickhero.views.home', name='home'),
     # url(r'^trickhero/', include('trickhero.foo.urls')),
