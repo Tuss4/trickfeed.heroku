@@ -1,11 +1,11 @@
 from django.conf.urls import patterns, include, url
-from trickhero.views import trick
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	url(r'^$', trick),
+	url(r'^$', 'trickhero.views.trick'),
+	url(r'^home/$', 'trickhero.views.trick'),
     # Examples:
     # url(r'^$', 'trickhero.views.home', name='home'),
     # url(r'^trickhero/', include('trickhero.foo.urls')),
