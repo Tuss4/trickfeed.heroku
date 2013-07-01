@@ -97,6 +97,9 @@ $(document).ready(function(){
 		bottom: 0;
 		text-align: center;
 	}
+	#overlay_content{
+		margin-top: 4%;
+	}
 	iframe {
 		border: 0;
 		max-width: 100%;
@@ -157,6 +160,7 @@ $(document).ready(function(){
 		{% block content %}{% endblock %}
 	</div>
 	<div id="overlay">
+		<div id="overlay_content">
 		<iframe id="ytplayer" width="720" height="480" src="http://www.youtube.com/embed/"></iframe>
 		<br />
 		{% if user%}
@@ -168,6 +172,7 @@ $(document).ready(function(){
 		{% endif %}
 		<br />
 		<button id="close">Click to Close</button>
+		</div>
 	</div>
 	<div id="footer">
 		<h4>&copy; 2013 <a href="http://tuss4dzigns.com" >Tuss4 Dzigns</a></h4>
