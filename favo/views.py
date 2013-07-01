@@ -11,9 +11,9 @@ def success(request):
 			video = request.POST['video'])
 		favorites = Favorite.objects.all()
 		v = request.POST['video']
-		fs = Favorite.objects.filter(video=v)
-		fu = Favorite.objects.filter(user=request.user.username)
-		if fs and fu:
+		fs = Favorite.objects.filter(video=v, user=request.user.username)
+		#fu = Favorite.objects.filter(user=request.user.username)
+		if fs:
 			return HttpResponseRedirect("/nodice/")
 		f.save()
 		return HttpResponseRedirect("/myfavs/")
