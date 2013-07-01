@@ -14,9 +14,9 @@ def success(request):
 		fs = Favorite.objects.filter(video=v)
 		fu = Favorite.objects.filter(user=request.user.username)
 		if fs and fu:
-			return HttpResponse(v + " is already in your favorites.")
+			return HttpResponse(v + " is already in your favorites.<a href='/home/'>Go back</a>.")
 		f.save()
-		return HttpResponse("Video: "+ v + " was added to your favorites!")
+		return HttpResponseRedirect("/myfavs/")
 
 def list_fav(request):
 	#The "my favorites" page

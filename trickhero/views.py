@@ -56,4 +56,4 @@ def register(request):
 	user.is_superuser = False
 	user.is_active = True
 	user.save()
-	return HttpResponse("Registration Successful!")
+	return HttpResponse("<a href='/login/'>Registration Successful!</a>")
