@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>trick.FEED</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
 function getThisId(datum){
 	var newUrl = "http://youtube.com/embed/"+datum+"?autoplay=1&allowFullScreen=true";
@@ -11,6 +11,8 @@ function getThisId(datum){
 }
 function changeThisId(datum){
 	document.getElementById("ytplayer").setAttribute("src",getThisId(datum));
+	document.getElementById("id_video").setAttribute("value",datum);
+	document.getElementById("id_name").setAttribute("value","Tuss4");
 }
 $(document).ready(function(){
 	$("#content li").click(function(){
@@ -18,7 +20,7 @@ $(document).ready(function(){
 	})
 	$("#close").click(function(){
 		$("#overlay").hide();
-		$("#ytplayer").attr("src","https://www.youtube.com/embed/");
+		$("#ytplayer").attr("src","http://www.youtube.com/embed/");
 	})
 })
 </script>
@@ -38,15 +40,20 @@ $(document).ready(function(){
 		color: #0099FF;
 		text-decoration: none;
 	}
+	#headerbar li{
+		display: inline-block;
+		padding-right: 1%;
+	}
 	#headerbar {
+		padding: 0;
 		left: 0;
 		right: 0;
 		top: 0;
 		background-color: #FFF;
 		position: fixed;
 		text-align: left;
-		padding-left: 5%;
-		box-shadow: 0px 10px 6px 3px #999;
+		padding-left: 1%;
+		box-shadow: 0px 10px 5px #999;
 	}
 	#firsthalf {
 		color: #CCC;
@@ -55,11 +62,11 @@ $(document).ready(function(){
 		color: #0066CC;
 	}
 	#title {
-		margin-top: 20%;
+		margin-top: 10%;
 		font-weight: bold;
 	}
 	#content {
-		margin-top: 5%;
+		margin-top: 8%;
 	}
 	#content li {
 		display: inline-block;
@@ -70,7 +77,7 @@ $(document).ready(function(){
 		right: 0;
 		bottom: 0;
 		border-top-style: solid;
-		border-color: #0066cc;
+		border-color: #0066CC;
 		border-width: 10px;
 		background-color: #fff;
 		margin-top: 5%; 
@@ -100,17 +107,62 @@ $(document).ready(function(){
 </style>
 </head>
 <body>
-	<div id="headerbar"><h3><span id="title"><span id="firsthalf">trick.</span><span id="lasthalf">FEED</span></span></h3></div>
+	<div id="headerbar">
+		<ul>
+			<li>
+				<h3>
+					<span id="title">
+						<a href="/home">
+							<span id="firsthalf">
+								trick.
+							</span>
+							<span id="lasthalf">
+								FEED
+							</span>
+						</a>
+					</span>
+				</h3>
+			</li>
+		{% if user %}
+			<li>
+				<a href="/myfavs">
+					My Favorites
+				</a>
+			</li>
+			<li>
+				<a href="/bye">
+					Log out
+				</a>
+			</li>
+		{% endif %}
+		{% if not user %}
+			<li>
+				<a href="/hello/">
+					Log in
+				</a>
+			</li>
+			<li>
+				<a href="/new/">
+					Register
+				</a>
+			</li>
+		{% endif%}
+		</ul>
+	</div>
 	<div id ="content">
-	<ul>
-		{% for i in content %}
-			<li>{{ i | safe}}</li>
-		{% endfor %}
-	</ul>
+		{% block content %}{% endblock %}
 	</div>
 	<div id="overlay">
 		<h1>Tricking Theatre</h1>
-		<iframe id="ytplayer" width="720" height="480" src="https://www.youtube.com/embed/"></iframe>
+		<iframe id="ytplayer" width="720" height="480" src="http://www.youtube.com/embed/"></iframe>
+		<br />
+		{% if user%}
+		<form action="/success/" method="post">
+			{{ form.as_p }}
+			{% csrf_token %}
+			<input type="submit" value="Add To Favorites" />
+		</form>
+		{% endif %}
 		<br />
 		<button id="close">Click to Close</button>
 	</div>
