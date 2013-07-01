@@ -25,7 +25,7 @@ def trick(request):
 	GetAndPrintVideoFeed(datafeed)
 	return render(request, 'feed.html', {'content': a, 'form': form, 'user': tf_user})
 
-	def hi(request):
+def hi(request):
 	return render(request, "login.html")
 
 def login(request):
