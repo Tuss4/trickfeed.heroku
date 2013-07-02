@@ -21,16 +21,6 @@ $(document).ready(function(){
 		$("#overlay").hide();
 		$("#ytplayer").attr("src","http://www.youtube.com/embed/");
 	})
-	$("#addToFav").submit(function(){
-		$.ajax({
-			data: $(this).serialize(),
-			type: $(this).attr('POST'),
-			url: $(this).attr('/success/'),
-			success: function(response) {
-				$("#favform").html(response);
-			}
-		});
-	});
 })
 </script>
 <style>
