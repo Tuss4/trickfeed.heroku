@@ -26,7 +26,8 @@ def trick(request):
 	return render(request, 'feed.html', {'content': a, 'form': form, 'user': tf_user})
 
 def hi(request):
-	return render(request, "login.html")
+	user = False
+	return render(request, "login.html", {'user': user})
 
 def login(request):
 	errors = False
@@ -47,7 +48,7 @@ def logout(request):
 def new(request):
 	form = New_user
 	return render(request, "register.html", {'form': form})
-	
+
 def nodice(request):
 	return render(request, "nodice.html")
 
