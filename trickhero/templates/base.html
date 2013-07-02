@@ -21,6 +21,17 @@ $(document).ready(function(){
 		$("#overlay").hide();
 		$("#ytplayer").attr("src","http://www.youtube.com/embed/");
 	})
+	$("#addToFav").submit(function(){
+		$.ajax({
+			data: $(this).serialize(),
+			type: $(this).attr('POST'),
+			url: $(this).attr('/success/'),
+			success: function(response) {
+				$("#favform").html(response);
+			}
+		});
+		return false;
+	});
 })
 </script>
 <style>
@@ -167,13 +178,15 @@ $(document).ready(function(){
 		<div id="overlay_content">
 		<iframe id="ytplayer" width="720" height="480" src="http://www.youtube.com/embed/"></iframe>
 		<br />
+		<div id="favform">
 		{% if user%}
-		<form action="/success/" method="post">
+		<form id="addToFav" action="/success/" method="post">
 			{{ form.as_p }}
 			{% csrf_token %}
 			<input type="submit" value="Add To Favorites" />
 		</form>
 		{% endif %}
+		</div>
 		<br />
 		<button id="close">Click to Close</button>
 		</div>
