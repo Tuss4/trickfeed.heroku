@@ -13,7 +13,12 @@
 		color: #0099FF;
 		text-decoration: none;
 	}
+	#headerbar li{
+		display: inline-block;
+		padding-right: 1%;
+	}
 	#headerbar {
+		padding: 0;
 		left: 0;
 		right: 0;
 		top: 0;
@@ -30,16 +35,20 @@
 		color: #0066CC;
 	}
 	#title {
-		margin-top: 20%;
+		margin-top: 10%;
 		font-weight: bold;
 	}
 	#content {
-		margin-top: 5%;
+		margin-top: 15%;
 	}
 	#content li {
+		padding: 0.5%;
 		display: inline-block;
 	}
 	#footer {
+		position: fixed;
+		left: 0;
+		right: 0;
 		bottom: 0;
 		border-top-style: solid;
 		border-color: #0066CC;
@@ -61,6 +70,9 @@
 		bottom: 0;
 		text-align: center;
 	}
+	#overlay_content{
+		margin-top: 4%;
+	}
 	iframe {
 		border: 0;
 		max-width: 100%;
@@ -68,4 +80,7 @@
 	}
 	button {
 		border: 0;
+	}
+	#id_video {
+		display: none;
 	}
