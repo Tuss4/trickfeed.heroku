@@ -157,6 +157,11 @@ $(document).ready(function(){
 	</div>
 	<div id ="content">
 		{% block content %}{% endblock %}
+		{% if fail %}
+		<script>
+			alert("That video is already in your favorites!");
+		</script>
+		{% endif%}
 	</div>
 	<div id="overlay">
 		<div id="overlay_content">

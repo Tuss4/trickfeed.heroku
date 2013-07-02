@@ -50,7 +50,8 @@ def new(request):
 	return render(request, "register.html", {'form': form})
 
 def nodice(request):
-	return render(request, "nodice.html")
+	fail = True
+	return render(request, "feed.html", {'fail': fail})
 
 def register(request):
 	user = User.objects.create_user(username=request.POST.get('username'),
