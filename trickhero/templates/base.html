@@ -17,7 +17,7 @@ $(document).ready(function(){
 	$("#content li").click(function(){
 		$("#overlay").show();
 	})
-	$("#overlay").click(function(){
+	$("#close").click(function(){
 		$("#overlay").hide();
 		$("#ytplayer").attr("src","http://www.youtube.com/embed/");
 	})
@@ -30,7 +30,6 @@ $(document).ready(function(){
 				$("#favform").html(response);
 			}
 		});
-		return false;
 	});
 })
 </script>
