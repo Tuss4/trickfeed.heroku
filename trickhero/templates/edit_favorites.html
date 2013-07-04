@@ -2,9 +2,11 @@
 {% block content %}
 <h3>Your Favorites>Edit</h3>
 <form action="/edit/" method="post">
+	<ul>
 	{% for i in list %}
-	<input type="checkbox" name="video" value="{{ i }}"><iframe id="ytplayer" width="360" height="240" src="http://www.youtube.com/embed/{{ i }}"></iframe><br />
+	<li><input type="checkbox" name="video" value="{{ i }}"><iframe id="ytplayer" width="360" height="240" src="http://www.youtube.com/embed/{{ i }}"></iframe><br /></li>
 	{% endfor %}
+	</ul>
 	{% csrf_token %}
 	<input type="submit" value="Delete Selected" />
 </form>
