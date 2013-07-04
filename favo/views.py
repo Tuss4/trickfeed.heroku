@@ -33,6 +33,6 @@ def del_fav(request):
 	if request.method == 'POST':
 		for i in request.POST.get("video"):
 			if i:
-				return HttpResponse(request.REQUEST["value"])
+				return HttpResponseRedirect("/myfavs/")
 
 
