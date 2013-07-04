@@ -29,3 +29,10 @@ def edit_fav(request):
 		vid_list = Favorite.objects.filter(user=request.user.username)
 		return render(request, "edit_favorites.html", {"list": vid_list})
 
+def del_fav(request):
+	if request.method == 'POST':
+		for i in request.POST.get("video"):
+			if i:
+				return HttpResponse("OK")
+
+

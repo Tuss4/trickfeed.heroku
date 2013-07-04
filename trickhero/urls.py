@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^register/$','trickhero.views.register'),
     url(r'^nodice/$','trickhero.views.nodice'),
     url(r'^efav/$','favo.views.edit_fav'),
+    url(r'^edit/$','favo.views.del_fav'),
     # Examples:
     # url(r'^$', 'trickhero.views.home', name='home'),
     # url(r'^trickhero/', include('trickhero.foo.urls')),
