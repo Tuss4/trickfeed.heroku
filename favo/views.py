@@ -24,3 +24,8 @@ def list_fav(request):
 		videos = Favorite.objects.filter(user=request.user.username)
 		return render(request, "favorites.html", {"videos": videos})
 
+def edit_fav(request):
+	if request.user.is_authenticated():
+		vid_list = Favorite.objects.filter(user=request.user.username)
+		return render(request, "edit_favorites.html", {"list": vid_list})
+
