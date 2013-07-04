@@ -31,9 +31,11 @@ def edit_fav(request):
 
 def del_fav(request):
 	if request.method == 'POST':
-		vidlist = request.POST.get("video")
-		vid_to_del = Favorite.objects.filter(video=vidlist, user=request.user.username)
-		vid_to_del.delete()
+		vidlist = request.POST.getlist("video")
+		for i in vidlist:
+			vid_to_del = Favorite.objects.filter(video=i, user=request.user.username)
+			if vid_to_del:
+				vid_to_del.delete()
 		return HttpResponseRedirect("/myfavs/")
 
 
