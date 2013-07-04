@@ -32,6 +32,6 @@ def edit_fav(request):
 def del_fav(request):
 	if request.method == 'POST':
 		vidlist = request.POST.get("video")
-		return HttpResponse("vidlist")
+		return HttpResponse(vidlist)
 
 
