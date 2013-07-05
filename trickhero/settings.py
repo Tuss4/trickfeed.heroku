@@ -1,4 +1,4 @@
-import os.path
+import os
 import dj_database_url
 # Django settings for trickhero project.
 
@@ -153,3 +153,8 @@ LOGGING = {
         },
     }
 }
+EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
+EMAIL_HOST= 'gator1624.hostgator.com'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
+EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']

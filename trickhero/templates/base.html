@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <title>trick.FEED</title>
+{% load staticfiles %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="{% static '/static/dajax/jquery.dajax.core.js' %}"></script>
 <script>
 function getThisId(datum){
 	var newUrl = "http://youtube.com/embed/"+datum+"?autoplay=1&allowFullScreen=true";
@@ -23,7 +25,6 @@ $(document).ready(function(){
 	})
 })
 </script>
-{% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static  "style.css" %}" />
 </head>
 <body>
