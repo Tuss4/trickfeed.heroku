@@ -1,7 +1,5 @@
 venv
 *.pyc
-urls.py
-settings.py
 *.py[cod]
 
 # C extensions
