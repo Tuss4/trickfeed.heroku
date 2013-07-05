@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Your Favorites</h3>
+	<ul>
+		{% for video in videos %}
+			<li><iframe id="ytplayer" width="360" height="240" src="http://www.youtube.com/embed/{{ video }}"></iframe></li>
+		{% endfor %}
+	</ul>
+{% endblock %}
