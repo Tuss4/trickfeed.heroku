@@ -11,7 +11,7 @@ $(document).ready(function(){
 		$("#overlay").show();
 	})
 	$(document).keyup(function(e){
-		if (e.keyCode == 27){
+		if (e.keyCode === 27){
 			$("#close").click(function(){
 				$("#overlay").hide();
 				$("#ytplayer").attr("src","http://www.youtube.com/embed/");
