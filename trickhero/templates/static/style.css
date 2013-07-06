@@ -85,3 +85,6 @@
 	#id_video {
 		display: none;
 	}
+	.hidden {
+		display: none;
+	}
