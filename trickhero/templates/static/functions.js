@@ -12,11 +12,9 @@ $(document).ready(function(){
 	})
 	$(document).keyup(function(e){
 		if (e.keyCode === 27){
-			$("#close").click(function(){
-				$("#overlay").hide();
-				$("#ytplayer").attr("src","http://www.youtube.com/embed/");
-				$("#addToFav").removeClass("hidden");		
-			});
+			$("#overlay").hide();
+			$("#ytplayer").attr("src","http://www.youtube.com/embed/");
+			$("#addToFav").removeClass("hidden");		
 		};
 	});
 	$("#addToFav").submit(function(){
