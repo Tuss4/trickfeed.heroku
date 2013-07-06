@@ -26,6 +26,9 @@ $(document).ready(function(){
 	})
 	$("#addToFav").submit(function(){
 		$("#addToFav").addClass("hidden");
+		$.post('/success/', $(this).serialize(), function(data){
+			$("#message").html("<h3>Added to favorites!</h3>");
+		});
 		return false;
 	})
 })
@@ -95,7 +98,7 @@ $(document).ready(function(){
 		<div id="favform">
 		{% if user%}
 		<div id="message"></div>
-		<form id="addToFav" action="/success/" method="post">
+		<form id="addToFav" action="" method="post">
 			{{ form.as_p }}
 			{% csrf_token %}
 			<input type="submit" value="Add To Favorites" />
