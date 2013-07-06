@@ -88,3 +88,7 @@
 	.hidden {
 		display: none;
 	}
+	.messagetext {
+		font-weight: bold;
+		color: green;
+	}
