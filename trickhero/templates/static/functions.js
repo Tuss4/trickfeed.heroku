@@ -14,8 +14,13 @@ $(document).ready(function(){
 		if (e.keyCode === 27){
 			$("#overlay").hide();
 			$("#ytplayer").attr("src","http://www.youtube.com/embed/");
-			$("#addToFav").removeClass("hidden");		
+			$("#addToFav").removeClass("hidden");
 		};
+	});
+	$("#close").click(function(){
+		$("#overlay").hide();
+		$("#ytplayer").attr("src","http://www.youtube.com/embed/");
+		$("#addToFav").removeClass("hidden");
 	});
 	$("#addToFav").submit(function(){
 		$("#addToFav").addClass("hidden");
