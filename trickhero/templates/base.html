@@ -27,7 +27,9 @@ $(document).ready(function(){
 	$("#addToFav").submit(function(){
 		$("#addToFav").addClass("hidden");
 		$.post('/success/', $(this).serialize(), function(data){
-			$("#message").html("Added to favorites!");
+			$.done(function(){
+				$("#message").html("Added to favorites!");
+			});
 		});
 		return false;
 	})
