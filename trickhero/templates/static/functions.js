@@ -23,7 +23,7 @@ $(document).ready(function(){
 		$("#addToFav").removeClass("hidden");
 	});
 	$("#addToFav").submit(function(){
-		$.preventDefault();
+		.preventDefault();
 		$("#addToFav").addClass("hidden");
 		$.post('/success/', $(this).serialize(), function(data){
 			$.done(function(){
