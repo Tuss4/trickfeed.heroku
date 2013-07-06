@@ -5,36 +5,7 @@
 <title>trick.FEED</title>
 {% load staticfiles %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="{% static '/static/dajax/jquery.dajax.core.js' %}"></script>
-<script>
-function getThisId(datum){
-	var newUrl = "http://youtube.com/embed/"+datum+"?autoplay=1&allowFullScreen=true";
-	return newUrl;
-}
-function changeThisId(datum){
-	document.getElementById("ytplayer").setAttribute("src",getThisId(datum));
-	document.getElementById("id_video").setAttribute("value",datum);
-}
-$(document).ready(function(){
-	$(".tvid").click(function(){
-		$("#overlay").show();
-	})
-	$("#close").click(function(){
-		$("#overlay").hide();
-		$("#ytplayer").attr("src","http://www.youtube.com/embed/");
-		$("#addToFav").removeClass("hidden");
-	})
-	$("#addToFav").submit(function(){
-		$("#addToFav").addClass("hidden");
-		$.post('/success/', $(this).serialize(), function(data){
-			$.done(function(){
-				$("#message").html("Added to favorites!");
-			});
-		});
-		return false;
-	})
-})
-</script>
+<script src="{% static 'functions.js' %}"></script>
 <link rel="stylesheet" type="text/css" href="{% static  "style.css" %}" />
 </head>
 <body>
