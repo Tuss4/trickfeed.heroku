@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<ul>
 	{% for i in list %}
-	<li> 
-		{{ i|safe }}
-	</li>
+		{{ i|safe }}<br />
 	{% endfor %}
-</ul>
 {% endblock %}
