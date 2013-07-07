@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<ul>
+	{% for i in list %}
+	<li> 
+		{{ i|safe }}
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}
