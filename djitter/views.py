@@ -7,7 +7,7 @@ from __future__ import unicode_literals
 import requests
 from requests_oauthlib import OAuth1
 from urlparse import parse_qs
-from trickhero import settings
+import trickhero.settings
 
 def djeets(request):
 	oauth = OAuth1(T_CKEY, client_secret=T_CSECRET)
