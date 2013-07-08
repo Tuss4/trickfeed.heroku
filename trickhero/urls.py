@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^efav/$','favo.views.edit_fav'),
     url(r'^edit/$','favo.views.del_fav'),
     url(r'^tweets/$', 'djitter.views.djeets'),
+    url(r'^accounts/', include('allauth.urls')),
     # Examples:
     # url(r'^$', 'trickhero.views.home', name='home'),
     # url(r'^trickhero/', include('trickhero.foo.urls')),

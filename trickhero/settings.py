@@ -120,6 +120,10 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'favo',
     'djitter',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.twitter',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -152,5 +156,14 @@ LOGGING = {
         },
     }
 }
-T_CKEY = 'P7fozjQ5eIzZNnBKivfcg'
-T_CSECRET = 'eG11PhAE9XtZvoeJfiIcy0wEvGcb0TjGzLxXoxi1Qk'
+
+AUTHENTICATION_BACKENDS = (
+        "django.contrib.auth.backends.ModelBackend",
+        "allauth.account.auth_backends.AuthenticationBackend",
+    )
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+        "django.core.context_processors.request",
+        "allauth.account.context_processors.account",
+        "allauth.socialaccount.context_processors.socialaccount",
+    )
