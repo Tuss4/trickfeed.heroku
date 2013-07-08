@@ -152,3 +152,5 @@ LOGGING = {
         },
     }
 }
+T_CKEY = 'P7fozjQ5eIzZNnBKivfcg'
+T_CSECRET = 'eG11PhAE9XtZvoeJfiIcy0wEvGcb0TjGzLxXoxi1Qk'
