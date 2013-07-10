@@ -76,6 +76,12 @@
 			{% csrf_token %}
 			<input type="submit" value="Add To Favorites" />
 		</form>
+		<br />
+		<form id="tweet" action="https://twitter.com" method="GET">
+			<textarea id="letweet" maxlength="140">
+			</textarea>
+			<input type="submit" value="Tweet!" />
+		</form>
 		{% endif %}
 		</div>
 		<br />

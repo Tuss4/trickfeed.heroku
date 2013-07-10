@@ -5,6 +5,7 @@ function getThisId(datum){
 function changeThisId(datum){
 	document.getElementById("ytplayer").setAttribute("src",getThisId(datum));
 	document.getElementById("id_video").setAttribute("value",datum);
+	document.getElementById("letweet").innerHTML = "Check out this tricking video: http://youtu.be/"+datum+" via #trickFEED";
 }
 $(document).ready(function(){
 	$(".tvid").click(function(){
