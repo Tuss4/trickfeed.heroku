@@ -1,8 +1,11 @@
 import os
 import dj_database_url
+import socket
 # Django settings for trickhero project.
-
-DEBUG = False
+if socket.gethostname() == "linuxmint":
+    DEBUG = True
+else:
+    DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -10,10 +13,22 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
-DATABASES = {
-    'default': dj_database_url.config(default='postgres://tnyhzsgpikmwh:yaNFNiVsXdRVu5OsDWNqYtRu9o@ec2-54-235-155-182.compute-1.amazonaws.com:5432/d9nhq008netbc7')
-}
+if socket.gethostname() == 'linuxmint':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': '/home/tuss4/Documents/trickfeed.heroku/db.db',                      # Or path to database file if using sqlite3.
+            # The following settings are not used with sqlite3:
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+            'PORT': '',                      # Set to empty string for default.
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.config(default='postgres://tnyhzsgpikmwh:yaNFNiVsXdRVu5OsDWNqYtRu9o@ec2-54-235-155-182.compute-1.amazonaws.com:5432/d9nhq008netbc7')
+    }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
