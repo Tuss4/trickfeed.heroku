@@ -92,3 +92,6 @@
 		font-weight: bold;
 		color: green;
 	}
+	img {
+		max-width: 100%;
+	}
